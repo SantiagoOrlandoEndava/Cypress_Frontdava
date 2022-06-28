@@ -8,20 +8,22 @@ describe('Navigate through Footer', () => {
             cy.visit('')
             cy.get('.LogoNavbar')
         })
+
+        function navigateToWebsite(website, url) {
+            cy.get('.colInfo').contains(website, {matchCase: false}).click()
+            cy.url().should('include', url)
+        }
     
         it('Navigate from Main Page to Acerca de Nosotros', () => {
-            cy.get('.colInfo').contains('Acerca de Nosotros').click()
-            cy.url().should('include', 'AcercaDeNosotros')
+            navigateToWebsite('Acerca de nosotros', 'AcercaDeNosotros')
         })
     
         it('Navigate from Main Page to Contacto', () => {
-            cy.get('.colInfo').contains('Contacto').click()
-            cy.url().should('include', 'Contacto')
+            navigateToWebsite('contacto', 'Contacto')
         })
     
         it('Navigate from Main Page to Terminos y Condiciones', () => {
-            cy.get('.colInfo').contains('minos y Condiciones').click()
-            cy.url().should('include', 'TerminosYCondiciones')
+            navigateToWebsite('rminos y Condiciones', 'TerminosYCondiciones')
         })
     
     
@@ -32,13 +34,11 @@ describe('Navigate through Footer', () => {
             })
     
             it('Navigate from Contacto Page to Acerca de Nosotros', () => {
-                cy.get('.colInfo').contains('Acerca de Nosotros').click()
-                cy.url().should('include', 'AcercaDeNosotros')
+                navigateToWebsite('Acerca de nosotros', 'AcercaDeNosotros')
             })
         
             it('Navigate from Contacto Page  to Terminos y Condiciones', () => {
-                cy.get('.colInfo').contains('minos y Condiciones').click()
-                cy.url().should('include', 'TerminosYCondiciones')
+                navigateToWebsite('rminos y Condiciones', 'TerminosYCondiciones')
             })
     
         })
@@ -110,6 +110,5 @@ describe('Navigate through Footer', () => {
         })
 
     })
-
 
 })
