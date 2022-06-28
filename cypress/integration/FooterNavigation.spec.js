@@ -46,6 +46,11 @@ describe('Navigate through Footer', () => {
 
     context('Navigate to social media', () => {
         
+        beforeEach(() => {
+            cy.visit('')
+            cy.get('.LogoNavbar')
+        })
+
         function accessSocialMedia(socialMedia, website) {
             cy.get('.colSocialMedia a').contains(socialMedia, {matchCase: false}).then((a) => {
                 cy.wrap(a).should('have.attr', 'href', website)
@@ -61,7 +66,7 @@ describe('Navigate through Footer', () => {
                 })
             })
         }
-
+//improve this to avoid code duplication
         function accessSocialMediaWithLogo(socialMedia, website) {
             cy.get('.colSocialMedia a').contains(socialMedia, {matchCase: false}).prev().then((a) => {
                 cy.wrap(a).should('have.attr', 'href', website)
@@ -77,11 +82,6 @@ describe('Navigate through Footer', () => {
                 })
             })
         }
-
-        beforeEach(() => {
-            cy.visit('')
-            cy.get('.LogoNavbar')
-        })
     
         it('Navigate from Main Page to Facebook', () => {
             accessSocialMedia('facebook', 'https://www.facebook.com')
