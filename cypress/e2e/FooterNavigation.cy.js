@@ -49,14 +49,14 @@ describe('Navigate through Footer', () => {
         function accessSocialMedia(socialMedia, website) {
             cy.get('.colSocialMedia a').contains(socialMedia, {matchCase: false}).then((a) => {
                 cy.wrap(a).should('have.attr', 'href', website)
+                    .and('have.attr', 'target', "_blank")
+                
                 const url = a.prop('href')
 
                 cy.request({
                     method: "GET",
                     url: url
                 }).then(response => {
-                    // let body = response.body;
-                    // expect(body).to.include('</html>')
                     expect(response.status).to.eq(200)
                 })
             })
@@ -65,14 +65,14 @@ describe('Navigate through Footer', () => {
         function accessSocialMediaWithLogo(socialMedia, website) {
             cy.get('.colSocialMedia a').contains(socialMedia, {matchCase: false}).prev().then((a) => {
                 cy.wrap(a).should('have.attr', 'href', website)
+                    .and('have.attr', 'target', "_blank")
+                
                 const url = a.prop('href')
 
                 cy.request({
                     method: "GET",
                     url: url
                 }).then(response => {
-                    // let body = response.body;
-                    // expect(body).to.include('</html>')
                     expect(response.status).to.eq(200)
                 })
             })
