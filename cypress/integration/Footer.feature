@@ -1,9 +1,11 @@
 Feature: Navigate with the buttons of the footer
 
-    Scenario Outline: Navigation to other sections
-
+    Background: 
         Given I am in any of the different sections of the website
-        When I click on <Button> in the footer
+
+
+    Scenario Outline: Navigation to other sections
+        When I click on <Button> section in the footer
         Then I validate that I access the <Webpage> webpage
 
         Examples:
@@ -14,16 +16,22 @@ Feature: Navigate with the buttons of the footer
 
 
     Scenario Outline: Navigation to social media
-
-        Given I am in any of the different sections of the website
-        When I click on social <Button> in the footer to access social media
-        Then I validate that I access the <Webpage> main site
+        When I click on <Button> social media in the footer
+        Then I validate that I access the <socialMedia> main site
 
         Examples:
-        | Button                   | Webpage |
+        | Button                   | socialMedia |
         | "Facebook"               | www.facebook.com |
-        # | Facebook logo          | www.facebook.com |
-        # | Twitter                | www.twitter.com |
-        # | Twitter logo           | www.twitter.com |
-        # | Instagram              | www.instagram.com |
-        # | Instagram logo         | www.instagram.com |
+        | "Twitter"                | www.twitter.com |
+        | "Instagram"              | www.instagram.com |
+
+    
+    Scenario Outline: Navigation to social media through logos
+        When I click on <Button> logo in the footer
+        Then I validate that I access the <socialMedia> main site
+
+        Examples:
+        | Button              | socialMedia |
+        | "Facebook"          | www.facebook.com |
+        | "Twitter"           | www.twitter.com |
+        | "Instagram"         | www.instagram.com |

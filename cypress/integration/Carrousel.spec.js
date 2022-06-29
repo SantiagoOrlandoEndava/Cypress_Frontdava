@@ -8,7 +8,7 @@ describe('Carrousel functionality', () => {
     })
 
     function validateSelectedImageIsVisible (numberOfImage) { //numberOfImage starting from 0
-        cy.get('.slider-wrapper li').eq(numberOfImage + 1).find('img').should('be.visible')
+        cy.get('.slider-wrapper li').eq(numberOfImage + 1).find('img').should('be.visible') //works bad beacause number 1 is alwasys visible
     }
 
     function validateSelectedThumbnail (numberOfImage) { //numberOfImage starting from 0
