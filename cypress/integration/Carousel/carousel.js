@@ -19,7 +19,7 @@ When("I click on the {word} arrow of the carrousel {int} times", (arrow, numberO
 
 
 Then('I validate that the correct {int} image is displayed', (numberOfImage) => {
-    cy.get('.slider-wrapper li').eq(numberOfImage).should('have.class', 'selected')
+    cy.validateImageIsVisible(numberOfImage)
     cy.wrap(numberOfImage).as('index')
 })
 
@@ -38,14 +38,15 @@ When("I navigate through the landing page", () => {
 
 Then('I validate that the carrousel switch to the following image after 4 seconds automatically', () => {
     
-    cy.get('.slider-wrapper li').eq(1).should('have.class', 'selected')
+    // cy.get('.slider-wrapper li').eq(1).should('have.class', 'selected')
+    cy.validateImageIsVisible(1)
     cy.wait(4000)
-    cy.get('.slider-wrapper li').eq(2).should('have.class', 'selected')
+    cy.validateImageIsVisible(2)
     cy.wait(4000)
-    cy.get('.slider-wrapper li').eq(3).should('have.class', 'selected')
+    cy.validateImageIsVisible(3)
 })
 
 And("I validate that after the last image it switches to the first one", () => {
     cy.wait(4000)
-    cy.get('.slider-wrapper li').eq(1).should('have.class', 'selected')
+    cy.validateImageIsVisible(1)
 })
