@@ -1,8 +1,10 @@
 Feature: Carrousel navigation
 
-    Scenario Outline: Validate navigating the carrousel with the thumbnails
-
+    Background:
         Given I enter the main page of the website
+
+
+    Scenario Outline: Validate navigating the carrousel with the thumbnails
         When I click on thumbnail <Thumbnail> of the carrousel
         Then I validate that the correct <Image> image is displayed
 
@@ -14,8 +16,6 @@ Feature: Carrousel navigation
 
 
     Scenario Outline: Validate navigating the carrousel with the arrows
-
-        Given I enter the main page of the website
         When I click on the <arrow> arrow of the carrousel <numberOf> times
         Then I validate that the correct <Image> image is displayed
         And I validate that the correct little circle and thumbnail are selected
@@ -30,10 +30,7 @@ Feature: Carrousel navigation
         | prev  | 3        | 1     |
 
 
-
     Scenario: Validate transitions of the carrousel
-
-        Given I enter the main page of the website
         When I navigate through the landing page
         Then I validate that the carrousel switch to the following image after 4 seconds automatically
         And I validate that after the last image it switches to the first one
