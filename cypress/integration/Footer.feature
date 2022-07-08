@@ -10,9 +10,9 @@ Feature: Navigate with the buttons of the footer
 
         Examples:
         | Button                   | Webpage |
-        | "Acerca de nosotros"     | AcercaDeNosotros | 
-        | "Contacto"               | Contacto |
-        | "rminos y condiciones"   | TerminosYCondiciones |
+        | "Acerca de nosotros"     | AboutUs | 
+        | "Contacto"                | Contact |
+        | "rminos y condiciones"   | TermsAndConditions |
 
 
     Scenario Outline: Navigation to social media
