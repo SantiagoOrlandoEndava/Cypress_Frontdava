@@ -1,7 +1,7 @@
 Feature: Carrousel navigation
 
     Background:
-        Given I enter the main page of the website
+        Given I am in the main page of the website
 
 
     Scenario Outline: Validate navigating the carrousel with the thumbnails

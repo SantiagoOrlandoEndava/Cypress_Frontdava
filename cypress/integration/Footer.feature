@@ -9,10 +9,10 @@ Feature: Navigate with the buttons of the footer
         Then I validate that I access the <Webpage> webpage
 
         Examples:
-        | Button                     | Webpage |
-        | "Acerca de nosotros"       | AcercaDeNosotros | 
-        | "Contacto"                 | Contacto |
-        | "terminos y condiciones"   | TerminosYCondiciones |
+        | Button                   | Webpage |
+        | "Acerca de nosotros"     | AboutUs | 
+        | "Contacto"                | Contact |
+        | "rminos y condiciones"   | TermsAndConditions |
 
 
     Scenario Outline: Navigation to social media

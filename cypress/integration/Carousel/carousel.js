@@ -1,6 +1,6 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-Given('I enter the main page of the website', () => {
+Given('I am in the main page of the website', () => {
     cy.visit('')
     cy.get('.LogoNavbar')
 })
