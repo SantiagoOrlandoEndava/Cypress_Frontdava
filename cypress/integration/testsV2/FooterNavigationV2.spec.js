@@ -52,11 +52,6 @@ describe('Navigate through Footer', () => {
 
     context('Navigate to social media', () => {
 
-        beforeEach(() => {
-            
-            cy.get('#footerLinks > a')
-        })
-
         it('Navigate from Main Page to Facebook', () => {
 
             endavel.accessSocialMedia('facebook', 'https://www.facebook.com')
