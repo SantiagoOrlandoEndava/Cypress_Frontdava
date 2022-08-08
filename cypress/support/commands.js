@@ -24,6 +24,24 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("validateImageIsVisible", (numberOfImage) => {
+/*Cypress.Commands.add("validateImageIsVisible", (numberOfImage) => {
     cy.get('.slider-wrapper li').eq(numberOfImage).should('have.class', 'selected')
-})
+});
+
+Cypress.Commands.add("accessSocialMedia", (socialMedia, website) => {
+    
+    cy.get('#footerLinks > a').contains(socialMedia, {matchCase: false}).then((a) => {
+        cy.wrap(a).should('have.attr', 'href', website)
+            .and('have.attr', 'target', "_blank")
+        
+        const url = a.prop('href')
+
+        cy.request({
+            method: "GET",
+            url: url
+        }).then(response => {
+            expect(response.status).to.eq(200)
+        })
+    })
+}); */
+
