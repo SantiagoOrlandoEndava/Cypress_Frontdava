@@ -24,9 +24,3 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-/*Cypress.Commands.add("validateImageIsVisible", (numberOfImage) => {
-    cy.get('.slider-wrapper li').eq(numberOfImage).should('have.class', 'selected')
-});
-
- */
-
