@@ -1,17 +1,15 @@
-Feature: Navigation with header not logged in
+Feature: Header nav bar
 
-Scenario Outline: The user navigates the different sections with navbar buttons and logo without being logged in
+    Scenario Outline: The user navigates through the website using the header buttons
 
-Given I am in the main page of the website
-And I am not logged in
-When I click on <Button> in the navigation bar
-Then I access the <Button> section webpage
-When I click on Endavel logo
-Then I am in the main page of the website
+        Given I am in any of the different sections of the website
+        When I click on <button> 
+        Then I am redirected to <website> page
 
-Examples: 
-| Button |
-| Conciertos |
-| Paquetes |
-| Contacto |
-
+        Examples:
+        | button | website |
+        | Destinos | destinations |
+        | Conciertos | concerts |
+        | Eventos | events |
+        | Paquetes | packages |
+        | Contacto | contact |

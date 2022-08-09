@@ -26,6 +26,10 @@ class Endavel {
             cy.get('#navBarLinks > a').contains(website, {matchCase: false}).click();
         }
 
+        if(section.toLowerCase() == 'landingpage'){
+            cy.get('#showMoreButtons button').contains(website, {matchCase: false}).click();
+        }
+
         cy.url().should('include', url);
     }
 }

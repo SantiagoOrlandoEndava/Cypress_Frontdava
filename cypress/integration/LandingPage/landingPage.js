@@ -23,7 +23,7 @@ And('I validate that there is an image below the header and as the background of
 })
 
 And('I validate that there are three cards displaying {word}', (section) => {
-    cy.get("#events #cardsTitle").contains(section, {matchCase: false}).parent().next().get("#card").should('have.length', 3)
+    cy.get("#events #cardsTitle").contains(section, {matchCase: false}).parent().next().find("#card h3").should('have.length', 3)
 })
 
 And('I validate that there is a footer at the bottom', () => {

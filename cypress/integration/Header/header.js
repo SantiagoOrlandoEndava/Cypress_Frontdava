@@ -1,30 +1,14 @@
-import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
-Given('I am in the main page of the website', () => {
+Given('I am in any of the different sections of the website', () => {
     cy.visit('')
-    cy.get('.LogoNavbar')
+    cy.viewport(1500, 660);
 })
 
-And('I am not logged in', () => {
-    cy.get('header button .MuiAvatar-circular').click()
-    cy.get('[role="menu"]').contains('Registro')
+When("I click on {word}", (button) => {
+    cy.get('#navBarLinks > a').contains(button, {matchCase: false}).click();
 })
 
-
-When("I click on {word} in the navigation bar", (button) => {
-    cy.get('header #navbar-pages').contains(button, {matchCase: false}).click({force: true})
+Then('I am redirected to {word} page', (website) => {
+    cy.url().should('include', website);
 })
-
-Then('I access the {word} section webpage', (webpage) => {
-    cy.url().should('include', webpage)
-})
-
-When("I click on Endavel logo", () => {
-    cy.get('.LogoNavbar').click({force: true})
-})
-
-Then('I am in the main page of the website', (webpage) => {
-    cy.visit('')
-    cy.get('.LogoNavbar')
-})
-

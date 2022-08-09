@@ -2,13 +2,12 @@ import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
 Given('I am in any of the different sections of the website', () => {
     cy.visit('')
-    cy.get('.LogoNavbar')
 })
 
 
 //ACCESS TO SECTION OF WEBSITE
 When("I click on {string} section in the footer", (button) => {
-    cy.get('.colInfo').contains(button, {matchCase: false}).click()
+    cy.get('#footerLinks > a').contains(button, {matchCase: false}).click();
 })
 
 Then('I validate that I access the {word} webpage', (webpage) => {
@@ -17,16 +16,9 @@ Then('I validate that I access the {word} webpage', (webpage) => {
 
 
 //ACCESS TO SOCIAL MEDIA
-//through button
 When("I click on {string} social media in the footer", (button) => {
-    cy.get('.colSocialMedia a').contains(button, {matchCase: false}).as('link')
+    cy.get('#footerLinks > a').contains(button, {matchCase: false}).as('link')
 })
-
-//through logo
-When("I click on {string} logo in the footer", (button) => {
-    cy.get('.colSocialMedia a').contains(button, {matchCase: false}).prev().as('link')
-})
-
 
 Then('I validate that I access the {word} main site', (webpage) => {
     cy.get('@link').then((link) => {
@@ -41,4 +33,3 @@ Then('I validate that I access the {word} main site', (webpage) => {
         })
     })
 })
-
