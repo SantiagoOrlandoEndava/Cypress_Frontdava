@@ -20,9 +20,6 @@ describe('Contact form', () => {
         contact.enterTextInField('Apellido', 'Last of twentyfive charss')
         contact.enterTextInField('Email', 'validMailOfFiftyCharactersAaaaaaaaaaaaaa@gmail.com')
         
-        //type('Write tests{enter}')
-        //podría ponerle algo con tab asi va al siguiente campo con eso y pruebo otra cosa.
-
         contact.submit()
     });
 
