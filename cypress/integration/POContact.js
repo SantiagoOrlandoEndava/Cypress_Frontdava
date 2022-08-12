@@ -1,7 +1,7 @@
 class Contact {
 
     enterTextInField(field, text) {
-        cy.get('#contactForm #inputLabel').contains(field).parent().find('input').clear().type(text)
+        cy.get('#contactForm').contains('.inputContainer', field).find('input').clear().type(text)
     }
 
     submit() {
