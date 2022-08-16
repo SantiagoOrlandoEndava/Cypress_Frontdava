@@ -7,9 +7,10 @@ Feature: Header nav bar
         Then I am redirected to <website> page
 
         Examples:
-        | button | website |
-        | Destinos | destinations |
-        | Conciertos | concerts |
-        | Eventos | events |
-        | Paquetes | packages |
-        | Contacto | contact |
+        | button     | website      |
+        | Destinos   | destinations |
+        | Conciertos | concerts     |
+        | Eventos    | events       |
+        | Paquetes   | packages     |
+        | Contacto   | contact      |
+        
